@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <titlebar></titlebar>
   </div>
 </template>
 
 <script>
+  import Titlebar from '@/components/Titlebar';
   export default {
     name: 'electron-demo',
+    components: { Titlebar },
   };
 </script>
 
