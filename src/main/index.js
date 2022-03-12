@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron' // eslint-disable-line
+import { app, BrowserWindow, ipcMain } from 'electron' // eslint-disable-line
 import '../renderer/store';
 
 /**
@@ -45,6 +45,14 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+ipcMain.on('window-minimize', () => {
+  mainWindow.minimize();
+});
+
+ipcMain.on('window-close', () => {
+  mainWindow.close();
 });
 
 /**
